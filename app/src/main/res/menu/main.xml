@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/only_xuanshang"
+        android:orderInCategory="100"
+        android:title="只看悬赏令"
+        app:showAsAction="never"  />
+        <!--showasaction选择是否显示在toolbar上或是隐藏在menu中-->
+
+    <item
+        android:id="@+id/only_lingshi"
+        android:orderInCategory="100"
+        android:title="只看零时"
+        app:showAsAction="never" />
+
+</menu>
