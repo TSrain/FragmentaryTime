@@ -1,4 +1,4 @@
-package activitytest.example.com.myapplication;
+package activitytest.example.com.myapplication.adapter;
 
 
 import android.content.Context;
@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import activitytest.example.com.myapplication.OfferActivity;
+import activitytest.example.com.myapplication.R;
 import activitytest.example.com.myapplication.entity.offer;
 
 public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> {

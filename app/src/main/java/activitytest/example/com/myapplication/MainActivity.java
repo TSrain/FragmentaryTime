@@ -39,16 +39,8 @@ import activitytest.example.com.myapplication.entity.offer;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener{
-  private offer[] offers={new offer("帮打扫","20元","1小时",R.drawable.bang_dasao),
-                          new offer("帮取快递","8元","少于20分钟",R.drawable.bang_qukuaidi),
-                          new offer("代课","面议","1.5小时",R.drawable.dai_ke),
-                          new offer("接孩子","25元","40分钟",R.drawable.jie_haizi),
-                          new offer("陪跑步","20元","1小时",R.drawable.pei_paobu),
-                          new offer("陪备考","面议（女士优先）","不定时",R.drawable.pei_beikao),
-                          new offer("帮修电脑","40元","1次",R.drawable.xiu_diannao)};
-    private List<offer> offerList=new ArrayList<>();
-    private OfferAdapter adapter;
-    private SwipeRefreshLayout swipeRefresh;
+
+
     private FragmentAt fragmentAt;
     private FragmentAuth fragmentAuth;
     private FragmentSpace fragmentSpace;
@@ -87,50 +79,9 @@ public class MainActivity extends BaseActivity
 
         // ��ʼ��Ĭ��Ϊѡ�е���ˡ���̬����ť
         clickAtBtn();
-        initOffers();
-        RecyclerView recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
-        GridLayoutManager layoutManager=new GridLayoutManager(this,2);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter =new OfferAdapter(offerList);
-        recyclerView.setAdapter(adapter);
-        swipeRefresh=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
-        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refreshOffers();
-            }
-        });
-    }
-    private void refreshOffers(){
-        new Thread(new Runnable(){
-            @Override
-            public void run(){
-      try{
-    Thread.sleep(2000);
-}catch (InterruptedException e){
-    e.printStackTrace();
-}
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        initOffers();
-                        adapter.notifyDataSetChanged();
-                        swipeRefresh.setRefreshing(false);
-                    }
-                });
-            }
-        }).start();
-    }
-  private void initOffers(){
-      offerList.clear();
-      for (int j=0;j<6;j++){
-          for (int i = 0; i < 6; i++) {
-              offerList.add(offers[i]);
-          }
-      }
 
-  }
+    }
+
 
   @Override
     public void onBackPressed() {

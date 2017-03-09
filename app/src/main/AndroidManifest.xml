@@ -7,7 +7,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label=" "
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name="activitytest.example.com.myapplication.MyApplication">
         <activity
             android:name=".MainActivity"
             android:label="                 附近"
@@ -24,5 +25,6 @@
         <activity android:name=".LoginActivity"
             android:theme="@style/OfferActivityTheme">
             </activity>
+
     </application>
 </manifest>
