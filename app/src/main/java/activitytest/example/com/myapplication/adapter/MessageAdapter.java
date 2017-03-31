@@ -41,6 +41,12 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         Messagetittle.setText(message.getTitle());
         Messagecondition.setText(message.getCondition());
         Messagelayout.setBackgroundResource(message.getColor());
+        Messagelayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return view;
     }
 }

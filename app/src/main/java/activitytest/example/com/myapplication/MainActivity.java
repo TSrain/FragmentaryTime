@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity
     // ����ͼƬ�������
     private ImageView atIv, authIv, spaceIv, moreIv;
 
+
     // ���尴ťͼƬ���
     private ImageView toggleImageView, plusImageView;
 
@@ -63,6 +64,7 @@ public class MainActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("基础");
         setSupportActionBar(toolbar);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -222,6 +224,8 @@ public class MainActivity extends BaseActivity
         // ��������ύ
         fragmentTransaction.commit();
         // �ı�ѡ��״̬
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("基础");
         atFl.setSelected(true);
         atIv.setSelected(true);
 
@@ -248,7 +252,8 @@ public class MainActivity extends BaseActivity
         fragmentTransaction.replace(R.id.frame_content, fragmentAuth);
         // ��������ύ
         fragmentTransaction.commit();
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("专业");
         atFl.setSelected(false);
         atIv.setSelected(false);
 
@@ -275,7 +280,8 @@ public class MainActivity extends BaseActivity
         fragmentTransaction.replace(R.id.frame_content, fragmentSpace);
         // ��������ύ
         fragmentTransaction.commit();
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("我");
         atFl.setSelected(false);
         atIv.setSelected(false);
 
@@ -302,7 +308,8 @@ public class MainActivity extends BaseActivity
         fragmentTransaction.replace(R.id.frame_content, fragmentMore);
         // ��������ύ
         fragmentTransaction.commit();
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("消息");
         atFl.setSelected(false);
         atIv.setSelected(false);
 
@@ -354,7 +361,6 @@ public class MainActivity extends BaseActivity
         // PopupWindow����ʾ��λ������
         // popWindow.showAtLocation(parent, Gravity.FILL, 0, 0);
         popWindow.showAsDropDown(parent, 0,0);
-
         popWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {

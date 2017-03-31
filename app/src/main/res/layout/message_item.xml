@@ -3,9 +3,9 @@
     android:id="@+id/message_layout"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="60sp"
     android:background="@drawable/message_bggreen">
-<ImageView
+ <de.hdodenhof.circleimageview.CircleImageView
     android:id="@+id/message_photo"
     android:layout_width="wrap_content"
     android:layout_weight="2"

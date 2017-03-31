@@ -7,6 +7,7 @@ import java.lang.ref.SoftReference;
  */
 
 public class Message  {
+    private offer Offer;
     private String title;
     private int color;
     private String condition;
@@ -19,11 +20,12 @@ public class Message  {
             this.condition="等待中";
         }
         else {
-            this.condition=wantpeople+"已申请";
+            this.condition=wantpeople+"人已申请";
         }
         this.photo=photo;
         this.wantpeople=wantpeople;
     }
+    public void setOffer(){this.Offer=Offer;}
     public String getTitle(){
         return title;
     }

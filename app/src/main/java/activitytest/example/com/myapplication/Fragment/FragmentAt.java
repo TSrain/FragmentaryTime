@@ -82,7 +82,7 @@ public class FragmentAt extends Fragment {
     private void initOffers(){
         offerList.clear();
         for (int j=0;j<6;j++){
-            for (int i = 0; i < 6; i++) {
+            for (int i = 6; i > 0; i--) {
                 offerList.add(offers[i]);
             }
         }

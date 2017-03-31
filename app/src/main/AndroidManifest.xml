@@ -4,14 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label=" "
+        android:icon="@drawable/main_logle"
+        android:label="零时"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="activitytest.example.com.myapplication.MyApplication">
         <activity
             android:name=".MainActivity"
-            android:label="                 附近"
+            android:label="零时"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,8 @@
         <activity android:name=".LoginActivity"
             android:theme="@style/OfferActivityTheme">
             </activity>
-
+     <activity android:name=".searchActivity"
+         android:theme="@style/OfferActivityTheme">
+     </activity>
     </application>
 </manifest>
