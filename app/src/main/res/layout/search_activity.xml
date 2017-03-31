@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="activitytest.example.com.myapplication.searchActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <activitytest.example.com.myapplication.widge.SearchView
         android:id="@+id/main_search_layout"

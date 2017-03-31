@@ -5,8 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:openDrawer="start">
+    <!--android:fitsSystemWindows="true"取消这句话状态栏可以变成沉浸色，不然一直是蓝色？？？S-->
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
