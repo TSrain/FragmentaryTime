@@ -76,5 +76,14 @@
     <string name="voice_seconds_tips">还可以说%1$s秒</string>
 
     <string name="voice_short_tips">录音时间太短</string>
+    <string name="title_activity_settings">Settings</string>
 
+
+    <string-array name="cities">
+        <item>跟随系统</item>
+        <item>提示音1</item>
+        <item>提示音2</item>
+        <item>提示音3</item>
+    </string-array>
+    <string name="title_activity_histroymession">histroymessionActivity</string>
 </resources>

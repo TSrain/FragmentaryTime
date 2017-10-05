@@ -3,6 +3,8 @@ package activitytest.example.com.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -81,7 +83,6 @@ public class MainActivity extends BaseActivity
 
         // ��ʼ��Ĭ��Ϊѡ�е���ˡ���̬����ť
         clickAtBtn();
-
     }
 
 
@@ -127,17 +128,13 @@ public class MainActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.nav_gallery) {
+            Intent log3=new Intent(MainActivity.this,histroymessionActivity.class);
+            startActivity(log3);
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-            Toast.makeText(MainActivity.this,"123123123",Toast.LENGTH_LONG).show();
-        } else if (id == R.id.nav_send) {
+            Intent log2=new Intent(MainActivity.this,SettingsActivity.class);
+            startActivity(log2);
+        }else if (id == R.id.nav_send) {
             Intent log=new Intent(MainActivity.this,LoginActivity.class);
             startActivity(log);
         }else if(id==R.id.nav_header_main){
@@ -206,6 +203,11 @@ public class MainActivity extends BaseActivity
             // ����м䰴ť
             case R.id.toggle_btn:
                 clickToggleBtn();
+                break;
+            case R.id.imageView1:
+                Intent fabu=new Intent(MainActivity.this,FabuActivity.class);
+                startActivity(fabu);
+                popWindow.dismiss();
                 break;
         }
     }
@@ -332,51 +334,50 @@ public class MainActivity extends BaseActivity
         plusImageView.setSelected(true);
     }
 
-    /**
-     * �ı���ʾ�İ�ťͼƬΪ����״̬
-     */
+
     private void changeButtonImage() {
         plusImageView.setSelected(false);
     }
 
-    /**
-     * ��ʾPopupWindow�����˵�
-     */
     private void showPopupWindow(View parent) {
         if (popWindow == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            View view = layoutInflater.inflate(R.layout.popwindow_layout, null);
+            View contentview = layoutInflater.from(MainActivity.this).inflate(R.layout.popwindow_layout, null);
             dm = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(dm);
-            // ����һ��PopuWidow����
-            popWindow = new PopupWindow(view, dm.widthPixels, LinearLayout.LayoutParams.WRAP_CONTENT);
+            popWindow = new PopupWindow(contentview);
+            popWindow.setWidth(dm.widthPixels);
+            popWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+//            contentview.getBackground().setAlpha(140);
+            ImageView POP1=(ImageView) contentview.findViewById(R.id.imageView1);
+            ImageView POP2=(ImageView) contentview.findViewById(R.id.imageView2);
+            ImageView POP3=(ImageView) contentview.findViewById(R.id.imageView3);
+//            注意contentview.findViewbyid
+  POP1.setOnClickListener(this);
+
         }
-        // ʹ��ۼ� ��Ҫ������˵���ؼ����¼��ͱ���Ҫ���ô˷���
+
         popWindow.setFocusable(true);
-        // ����������������ʧ
         popWindow.setOutsideTouchable(true);
-        // ���ñ����������Ϊ�˵��������Back��Ҳ��ʹ����ʧ�����Ҳ�����Ӱ����ı���
-        popWindow.setBackgroundDrawable(new BitmapDrawable());
-        // PopupWindow����ʾ��λ������
+        popWindow.setBackgroundDrawable(new ColorDrawable(0));
         // popWindow.showAtLocation(parent, Gravity.FILL, 0, 0);
+
         popWindow.showAsDropDown(parent, 0,0);
         popWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
-                // �ı���ʾ�İ�ťͼƬΪ����״̬
                 changeButtonImage();
             }
         });
 
-        // ���������¼�
-        popWindow.setTouchInterceptor(new View.OnTouchListener() {
-            public boolean onTouch(View view, MotionEvent event) {
-                // �ı���ʾ�İ�ťͼƬΪ����״̬
-                changeButtonImage();
-                popWindow.dismiss();
-                return false;
-            }
-        });
+
+//        popWindow.setTouchInterceptor(new View.OnTouchListener() {
+//            public boolean onTouch(View view, MotionEvent event) {
+//                changeButtonImage();
+//                popWindow.dismiss();
+//                return false;
+//            }
+//        });
     }
 }

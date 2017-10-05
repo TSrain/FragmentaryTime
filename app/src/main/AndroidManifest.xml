@@ -3,12 +3,12 @@
     package="activitytest.example.com.myapplication">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/main_logle"
         android:label="零时"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name="activitytest.example.com.myapplication.MyApplication">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="零时"
@@ -19,14 +19,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OfferActivity"
-            android:theme="@style/OfferActivityTheme">
+        <activity
+            android:name=".OfferActivity"
+            android:theme="@style/OfferActivityTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/OfferActivityTheme" />
+        <activity
+            android:name=".searchActivity"
+            android:theme="@style/OfferActivityTheme" />
+        <activity
+            android:name=".FabuActivity"
+            android:theme="@style/OfferActivityTheme" />
+        <activity
+            android:name=".BriefActivity"
+            android:theme="@style/OfferActivityTheme" />
+        <activity android:name=".MoreinformationActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/OfferActivityTheme" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".VersionActivity" />
+        <activity
+            android:name=".histroymessionActivity"
+            android:label=""
+            android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".LoginActivity"
-            android:theme="@style/OfferActivityTheme">
-            </activity>
-     <activity android:name=".searchActivity"
-         android:theme="@style/OfferActivityTheme">
-     </activity>
     </application>
+
 </manifest>
